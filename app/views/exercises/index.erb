@@ -1,0 +1,16 @@
+<h2>All Exercises</h2>
+<ul class="exercise_image">
+  <% @exercises.each do |exercise| %>
+    <li class="image_list">
+      <div class="media-left">
+            <img class="images" src="<%= @exercise.image_url%>">
+      </div>
+      <div class="exercise_info">
+          <h4 class="exercise_name"><%= @exercise.name %></h4>
+          <h4 class="exercise_difficulty"><%= @exercise.difficulty %></h4>
+          <h4 class="exercise_description"><%= @exercise.description %></h4>
+          <h4 class="exercise_youtube_url"><%= @exercise.youtube_url %></h4>
+      </div>
+    </li>
+  <% end %>
+</ul>

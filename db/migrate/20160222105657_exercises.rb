@@ -6,6 +6,7 @@ class Exercise < ActiveRecord::Migration
       t.integer :reps
       t.string :description
       t.string :youtube_url
+      t.string :image_url
     end
   end
 end
