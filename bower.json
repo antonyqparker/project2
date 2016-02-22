@@ -1,0 +1,21 @@
+{
+  "name": "full_stack_setup",
+  "homepage": "https://github.com/antonyqparker/WDI_LDN_18_HOMEWORK",
+  "authors": [
+    "Antony Parker <antonyqparker@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6"
+  }
+}
