@@ -1,5 +1,5 @@
 get '/routines' do
-  # authorize!
+  authorize!
   @routines = Routine.all
   erb :'routines/index'
 end
@@ -7,7 +7,7 @@ end
 
 # NEW
 get '/routines/new' do
-  # authorize!
+  authorize!
   @exercises = Exercise.all
   @routines = Routine.new
   erb :'routines/new'
@@ -26,7 +26,7 @@ post '/routines' do
 end
 
 get '/routines/:id' do
-  # authorize!
+  authorize!
   @routines = Routine.find(params[:id])
   erb :'routines/show'
 end

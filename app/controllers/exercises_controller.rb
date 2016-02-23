@@ -1,6 +1,6 @@
 # INDEX
 get '/exercises' do
-  # authorize!
+  authorize!
   @exercises = Exercise.all
   erb :'exercises/index'
 end
