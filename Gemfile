@@ -9,6 +9,8 @@ gem "rake"
 gem "pg"
 gem "sass"
 gem "sinatra-assetpack"
+gem "bcrypt"
+gem "sinatra-flash"
 # gem "rails"
 
 group :development do 

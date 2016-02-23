@@ -1,5 +1,8 @@
 require "sinatra/reloader" if development? 
 require "sass/plugin/rack"
+require 'sinatra/flash'
+require_relative '../lib/sinatra-flash'
+register Sinatra::Flash
 
 Sass::Plugin.options[:style] = :compact
 use Sass::Plugin::Rack
@@ -23,6 +26,8 @@ APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 APP_NAME = APP_ROOT.basename.to_s
 
 configure do 
+  enable :sessions
+    set :sessions_secret, ENV['SESSIONS_SECRET'] || "this is a secrect, shhhh"
   set :views, File.join(APP_ROOT, "app", "views")
 end
 
