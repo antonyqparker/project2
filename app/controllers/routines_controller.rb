@@ -15,11 +15,18 @@ end
 
 # CREATE
 post '/routines' do
-  # authorize!
-  @routines = Routine.new(params[:routine])
+  authorize!
+  @routine = Routine.new(params[:routine])
   if @routine.save
+    @routine.user = current_user
     redirect "/routines"
   else
     erb :'routines/new'
   end
+end
+
+get '/routines/:id' do
+  # authorize!
+  @routines = Routine.find(params[:id])
+  erb :'routines/show'
 end

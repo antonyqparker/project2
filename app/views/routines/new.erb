@@ -1,16 +1,25 @@
 <h1>Create Routine</h1>
 
 <form id="create_routine" method="post" action="/routines">
-<ul class="exercise_image">
-  <% @exercises.each do |exercise| %>
-    <li class="image_list">
-      <img class="images" src="<%= exercise.image_url%>">
-          <h4 class="exercise_name"><%= exercise.name %></h4>
-          <h4 class="exercise_difficulty"><%= exercise.difficulty %></h4>
-          <h4 class="exercise_description"><%= exercise.description %></h4>
-          <h4 class="exercise_youtube_url"><%= exercise.youtube_url %></h4>
-    </li>
-  <% end %>
-</ul>
+  <div class="form-group">
+    <label>Routine Name</label>
+    <input name="routine[name]" placeholder="Routine Name">
+    <label>Difficulty</label>
+    <input name="routine[difficulty]" placeholder="Difficulty(easy/medium/hard">
+    <label>Duration</label>
+    <input name="routine[duration]" placeholder="Duration(mins)">
+  </div>
+  <ul class="exercise_image">
+    <% @exercises.each do |exercise| %>
+      <li class="image_list">
+        <img class="images" src="<%= exercise.image_url%>">
+        <h4 class="exercise_name"><%= exercise.name %></h4>
+        <h4 class="exercise_difficulty"><%= exercise.difficulty %></h4>
+        <h4 class="exercise_description"><%= exercise.description %></h4>
+        <h4 class="exercise_youtube_url"><%= exercise.youtube_url %></h4>
+      </li>
+      <input type="checkbox" name="routine[exercise_ids][]" value="<%= exercise.id %>"> Select Exercise
+    <% end %>
+  </ul>
   <button type="submit" id="routine_creator">Create Routine</button>
 </form>

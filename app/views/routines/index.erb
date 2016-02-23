@@ -1,0 +1,15 @@
+<h1>Routines</h1>
+  
+<a href="/routines/new" class="btn btn-default">Create new routine</a>
+
+<ul class="list-group">
+<% @routines.each do |routine| %>
+  <li class="list-group-item">
+    <%= routine.name %>
+    <%= routine.difficulty %>
+    <%= routine.duration %>
+    <%= current_user %>
+    <%= routine.description %>
+  </li>
+<% end %>
+</ul>
