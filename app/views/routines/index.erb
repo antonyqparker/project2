@@ -9,10 +9,12 @@
     <p>Name: <%= routine.name %></p>
     <p>Difficulty: <%= routine.difficulty %></p>
     <p>Duration: <%= routine.duration %></p>
-    <p>User: <%= routine.user_id %></p>
     <p>Description: <%= routine.description %></p>
+    <% if routine.user %>
+    <p>User: <%= routine.user.username %></p>
+    <% end %>
   </li>
-  <button type="submit" class="btn btn-default"><a href="/routines/<%=routine.id%>/edit">Edit</a></button>
+  <button type="submit" class="btn btn-default"><a href="/routines/<%= routine.id %>/edit">Edit</a></button>
 
  <form method="post" action="/routines/<%= routine.id %>/delete"> 
      <input type="hidden" name="_method" value="delete">

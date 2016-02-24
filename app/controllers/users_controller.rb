@@ -11,7 +11,7 @@ post '/users' do
   authorize!
   @user = User.new(params[:user])
   if @user.save
-    redirect "/users/#{@user.id}"
+    redirect "/users/:#{@user.id}"
   else
     erb :'users/new'
   end

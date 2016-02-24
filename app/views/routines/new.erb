@@ -8,6 +8,10 @@
     <input name="routine[difficulty]" placeholder="Difficulty(easy/medium/hard">
     <label>Duration</label>
     <input name="routine[duration]" placeholder="Duration(mins)">
+    <label>Description</label>
+    <input name="routine[description]" placeholder="Description">
+    <input name="routine[user_id]" value="<%= current_user.id %>" type="hidden"></input>
+
   </div>
   <ul class="exercise_image">
     <% @exercises.each do |exercise| %>

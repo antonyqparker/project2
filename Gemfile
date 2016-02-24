@@ -11,6 +11,7 @@ gem "sass"
 gem "sinatra-assetpack"
 gem "bcrypt"
 gem "sinatra-flash"
+gem "carrierwave"
 # gem "rails"
 
 group :development do 

@@ -18,7 +18,6 @@ post '/routines' do
   authorize!
   @routine = Routine.new(params[:routine])
   if @routine.save
-    @routine.user = current_user
     redirect "/routines"
   else
     erb :'routines/new'

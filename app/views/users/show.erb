@@ -4,4 +4,6 @@
 <h2><%= @user.level %></h2>
 <!--photo-->
 
-<!--On the users page we want to be able to see all of the created exercises by that user-->
+<% if !@user.photo.url.nil? %>
+  <img src="<%= @user.photo.url %>">
+<% end %>
