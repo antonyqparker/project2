@@ -25,8 +25,36 @@ post '/routines' do
   end
 end
 
+# SHOW
 get '/routines/:id' do
   authorize!
-  @routines = Routine.find(params[:id])
+  @routine = Routine.find(params[:id])
   erb :'routines/show'
 end
+
+# Edit
+get '/routines/:id/edit' do
+  authorize!
+  @routine = Routine.find(params[:id])
+  erb :'routines/edit'
+end
+
+#Update
+put '/routines/:id' do
+  @routine = Routine.find(params[:id])
+  if @routine.update(params[:routine])
+    redirect "routines/#{@routine.id}"
+  else
+    erb :'routines/show'
+  end
+end
+
+#Delete
+delete '/routines/:id/delete' do
+  authorize!
+  @routine = Routine.find_by_id(params[:id])
+  @routine.delete
+  redirect to "/routines"
+end
+
+

@@ -1,9 +1,3 @@
-# INDEX
-get '/users' do
-  authorize!
-  @users = User.all
-  erb :'users/index'
-end
 
 # NEW
 get '/users/new' do
@@ -17,7 +11,7 @@ post '/users' do
   authorize!
   @user = User.new(params[:user])
   if @user.save
-    redirect "/users"
+    redirect "/users/#{@user.id}"
   else
     erb :'users/new'
   end
@@ -35,4 +29,14 @@ get '/users/:id/edit' do
   authorize!
   @user = User.find(params[:id])
   erb :'users/edit'
+end
+
+put '/users/:id' do
+  puts params[:user]
+  @user = User.find(params[:id])
+  if @user.update(params[:user])
+    redirect "/users/#{@user.id}"
+  else
+    erb :"/users/edit"
+  end
 end

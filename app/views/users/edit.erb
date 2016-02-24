@@ -1,29 +1,27 @@
-<h2>Edit Profile</h2>
-<form id="register" method="post" action="/users/<%= @user.id %>">
-  <input type="hidden" name="_method" value="put">
+<h2>User Information</h2>
+<% @user.errors.full_messages.each do |error| %>
+  <div class="alert alert-danger alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <%= error %>
+  </div>
+<% end %>
+<form id="information_upload" method="post" action="/users/<%= @user.id %>">
+  <input type="hidden" name="_method" value="put"></input>
   <div class="form-group">
-    <label for="first_name">First name</label>
-    <input name="user[first_name]" type="text" class="form-control" id="username" placeholder="First name" value="<%= @user.first_name %>">
+    <label for="age">Age</label>
+    <input name="user[age]" type="text" class="form-control" id="user_age" placeholder="Age" value="<%= @user.age %>">
   </div>
   <div class="form-group">
-    <label for="last_name">Last name</label>
-    <input name="user[last_name]" type="text" class="form-control" id="username" placeholder="Last name" value="<%= @user.last_name %>">
+    <label for="level">Level</label>
+    <input name="user[level]" type="text" class="form-control" id="user_level" placeholder="Level" value="<%= @user.level %>">
   </div>
   <div class="form-group">
-    <label for="username">Username</label>
-    <input name="user[username]" type="text" class="form-control" id="username" placeholder="Username" value="<%= @user.username %>">
-  </div>
-  <div class="form-group">
-    <label for="image">Image</label>
-    <input name="user[image]" type="text" class="form-control" id="image" placeholder="Image" value="<%= @user.image %>">
-  </div>
-  <div class="form-group">
-    <label for="email">Email address</label>
-    <input name="user[email]" type="email" class="form-control" id="email" placeholder="Email" value="<%= @user.email %>">
+    <label for="gender">Gender</label>
+    <input name="user[gender]" type="text" class="form-control" id="user_gender" placeholder="Gender" value="<%= @user.gender %>">
   </div>
  <!--  <div class="form-group">
-    <label for="password">Password</label>
-    <input name="user[password]" type="password" class="form-control" id="password" placeholder="Password">
+    <label for="image">Email address</label>
+    <input name="user[email]" type="email" class="form-control" id="email" placeholder="Email">
   </div> -->
-  <button type="submit" class="btn btn-default">SUBMIT</button>
+  <button type="submit" class="btn btn-default">Update</button>
 </form>
