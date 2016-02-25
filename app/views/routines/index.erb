@@ -1,6 +1,6 @@
 <h1 class="header">Routines</h1>
   <section class="routine_background"></section>
-<a href="/routines/new" class="create_routine_button">Create new routine</a>
+<a href="/routines/new" class="own-button">Create new routine</a>
 <div class="row">
     <ul class="list-group">
       <% @routines.each do |routine| %>
@@ -8,22 +8,23 @@
         <ul class="card">
           <li class="routine_list">
             <li class="list-group-item">
-              <a href="/routines/<%= routine.id %>" class="btn btn-default">View Routine</a>
+              <% if !routine.user.photo.url.nil? %>
+              <img src="<%= routine.user.photo.url %>">
+              <% end %>
+                
                 <p>Name: <%= routine.name %></p>
                 <p>Difficulty: <%= routine.difficulty %></p>
                 <p>Duration: <%= routine.duration %></p>
                 <p>Description: <%= routine.description %></p>
                 <% if routine.user %>
                 <p>User: <%= routine.user.username %></p>
-                <% if !routine.user.photo.url.nil? %>
-                <img src="<%= routine.user.photo.url %>">
-                <% end %>
+                <a href="/routines/<%= routine.id %>" class="index-buttons">View</a>
+                <button type="submit" class="index-buttons"><a href="/routines/<%= routine.id %>/edit">Edit</a></button>
+                  <form method="post" action="/routines/<%= routine.id %>/delete"> 
+                    <input type="hidden" name="_method" value="delete">
+                <button type="submit" class="index-buttons">Delete</button>
               <% end %>
             </li>
-              <button type="submit" class="btn btn-default"><a href="/routines/<%= routine.id %>/edit">Edit</a></button>
-                <form method="post" action="/routines/<%= routine.id %>/delete"> 
-                  <input type="hidden" name="_method" value="delete">
-              <button type="submit" class="btn btn-default">Delete</button>
               </form>
             </li>
           </ul> 

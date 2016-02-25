@@ -2,9 +2,9 @@
 <% if !@user.photo.url.nil? %>
   <img src="<%= @user.photo.url %>">
 <% end %>
-<h2>Username: <%= @user.username %></h2>
-<h2>Gender: <%= @user.gender %></h2>
-<h2>DOB: <%= @user.age %></h2>
-<h2>Level: <%= @user.level %></h2>
+<h2 class="user-info">Username: <%= @user.username %></h2>
+<h2 class="user-info">Gender: <%= @user.gender %></h2>
+<h2 class="user-info">DOB: <%= @user.age %></h2>
+<h2 class="user-info">Level: <%= @user.level %></h2>
 </div>
 
