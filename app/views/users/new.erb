@@ -8,8 +8,8 @@
 <form id="information_upload" method="post" action="/users/<%= @user.id %>">
   <input type="hidden" name="_method" value="put"></input>
   <div class="form-group">
-    <label for="age">Age</label>
-    <input name="user[age]" type="text" class="form-control" id="user_age" placeholder="Age" value="<%= @user.age %>">
+    <label for="age">DOB</label>
+    <input name="user[age]" type="text" class="form-control" id="user_age" placeholder="DOB" value="<%= @user.age %>">
   </div>
   <div class="form-group">
     <label for="level">Level</label>

@@ -1,29 +1,40 @@
-<h1>Create Routine</h1>
+<h1 class="header">Create Routine</h1>
 
-<form id="create_routine" method="post" action="/routines">
-  <div class="form-group">
-    <label>Routine Name</label>
-    <input name="routine[name]" placeholder="Routine Name">
-    <label>Difficulty</label>
-    <input name="routine[difficulty]" placeholder="Difficulty(easy/medium/hard">
-    <label>Duration</label>
-    <input name="routine[duration]" placeholder="Duration(mins)">
-    <label>Description</label>
-    <input name="routine[description]" placeholder="Description">
-    <input name="routine[user_id]" value="<%= current_user.id %>" type="hidden"></input>
+<section class="routine_background"></section>
 
-  </div>
-  <ul class="exercise_image">
+
+
+<div class="row">
+  <ul>
     <% @exercises.each do |exercise| %>
-      <li class="image_list">
-        <img class="images" src="<%= exercise.image_url%>">
-        <h4 class="exercise_name"><%= exercise.name %></h4>
-        <h4 class="exercise_difficulty"><%= exercise.difficulty %></h4>
-        <h4 class="exercise_description"><%= exercise.description %></h4>
-        <h4 class="exercise_youtube_url"><%= exercise.youtube_url %></h4>
-      </li>
-      <input type="checkbox" name="routine[exercise_ids][]" value="<%= exercise.id %>"> Select Exercise
+    <li class="col-lg-6">
+      <ul class="card">
+        <li class="image_list">
+          <img class="img-thumbnail" src="<%= exercise.image_url%>">
+              <h4 class="exercise_name"><%= exercise.name %></h4>
+              <h4 class="exercise_difficulty"><%= exercise.difficulty %></h4>
+              <h4 id="descrip_colour"class="exercise_description hidden"><%= exercise.description %></h4>
+              <h4 class="exercise_youtube_url"><%= exercise.youtube_url %></h4>
+              <input type="checkbox" name="routine[exercise_ids][]" value="<%= exercise.id %>"> Select Exercise
+        </li>
+      </ul>
+    </li>
     <% end %>
   </ul>
-  <button type="submit" id="routine_creator">Create Routine</button>
-</form>
+  
+
+  <form id="create_routine" method="post" action="/routines">
+    <div class="form-group">
+      <label>Routine Name</label>
+      <input name="routine[name]" placeholder="Routine Name">
+      <label>Difficulty</label>
+      <input name="routine[difficulty]" placeholder="Difficulty(easy/medium/hard">
+      <label>Duration</label>
+      <input name="routine[duration]" placeholder="Duration(mins)">
+      <label>Description</label>
+      <input name="routine[description]" placeholder="Description">
+      <input name="routine[user_id]" value="<%= current_user.id %>" type="hidden"></input>
+      <button type="submit" id="routine_creator" class="create_routine_button">Create Routine</button>
+
+</div>
+

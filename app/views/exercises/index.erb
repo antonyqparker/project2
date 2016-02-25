@@ -1,12 +1,28 @@
-<h2>All Exercises</h2>
-<ul class="exercise_image">
-  <% @exercises.each do |exercise| %>
-    <li class="image_list">
-      <img class="images" src="<%= exercise.image_url%>">
-          <h4 class="exercise_name"><%= exercise.name %></h4>
-          <h4 class="exercise_difficulty"><%= exercise.difficulty %></h4>
-          <h4 class="exercise_description"><%= exercise.description %></h4>
-          <h4 class="exercise_youtube_url"><%= exercise.youtube_url %></h4>
+<h2 id="exercise_header">All Exercises</h2>
+<section class="session"></section>
+<div class="row">
+  <ul>
+    <% @exercises.each do |exercise| %>
+    <li class="col-lg-6">
+      <ul class="card">
+        <li class="image_list">
+          <img class="img-thumbnail" src="<%= exercise.image_url%>">
+              <h4 class="exercise_name"><%= exercise.name %></h4>
+              <h4 class="exercise_difficulty"><%= exercise.difficulty %></h4>
+              <h4 id="descrip_colour"class="exercise_description hidden"><%= exercise.description %></h4>
+              <h4 class="exercise_youtube_url"><%= exercise.youtube_url %></h4>
+        </li>
+      </ul>
     </li>
-  <% end %>
-</ul>
+    <% end %>
+  </ul>
+</div>
+
+<!-- <div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div> -->
