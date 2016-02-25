@@ -8,9 +8,11 @@
         <ul class="card">
           <li class="routine_list">
             <li class="list-group-item">
+              <div class="img-rounded">
               <% if !routine.user.photo.url.nil? %>
               <img src="<%= routine.user.photo.url %>">
               <% end %>
+              </div>
                 
                 <p>Name: <%= routine.name %></p>
                 <p>Difficulty: <%= routine.difficulty %></p>

@@ -8,19 +8,19 @@
 <form id="information_upload" method="post" action="/users/<%= @user.id %>" enctype="multipart/form-data">
   <input type="hidden" name="_method" value="put"></input>
   <div class="form-group">
-    <label for="age">Age</label>
-    <input name="user[age]" type="text" class="form-control" id="user_age" placeholder="Age" value="<%= @user.age %>">
+    <label for="age"><font class="layout_font">DOB</font></label>
+    <input name="user[age]" type="text" class="form-control" id="user_age" placeholder="dd/mm/yy" value="<%= @user.age %>">
   </div>
   <div class="form-group">
-    <label for="level">Level</label>
+    <label for="level"><font class="layout_font">Level</font></label>
     <input name="user[level]" type="text" class="form-control" id="user_level" placeholder="Level" value="<%= @user.level %>">
   </div>
-  <div align="center">
+  <div align="center" class="form-group">
     <select name="user[gender]">
       <option name="user[gender]" value="<%= @user.gender %>" >Male</option>
       <option name="user[gender]" value="<%= @user.gender %>">Female</option>
       <option name="user[gender]" value="<%= @user.gender %>">Both</option>
     </select>
   </div>
-  <button type="submit" class="btn btn-default">Update</button>
+  <button type="submit" class="own-button">Update</button>
 </form>
