@@ -1,6 +1,6 @@
 <div id="user_profile">
 <% if !@user.photo.url.nil? %>
-  <img src="<%= @user.photo.url %>">
+  <img src="<%= @user.photo.url %>" class="img-rounded" width="140" height="120">
 <% end %>
 <h2 class="user-info">Username: <%= @user.username %></h2>
 <h2 class="user-info">Gender: <%= @user.gender %></h2>

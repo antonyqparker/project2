@@ -15,9 +15,9 @@
             <p class="exercise_difficulty"><%= exercise.difficulty %></p>
             <p id="descrip_colour" class="exercise_description hidden"><%= exercise.description %></p>
             <p class="exercise_youtube_url"><%= exercise.youtube_url %></p>
-            <div class="checkboxFour">
-              <input type="checkbox" name="routine[exercise_ids][]" value="<%= exercise.id %>" id="checkboxFourInput">
-              <label for="checkboxFourInput"></label>
+            <div class="selector">
+              <input type="checkbox" class="selector" name="routine[exercise_ids][]" value="<%= exercise.id %>">
+              <label for="selector"></label>
             </div>
           </li>
         </ul>
@@ -31,11 +31,11 @@
     <input name="routine[user_id]" value="<%= current_user.id %>" type="hidden"></input>
 
     <div class="">
-      <label class="form-label">Name</label><br>
+      <label class="photo_style">Name</label><br>
       <input name="routine[name]" class="clear_text_box" placeholder="Routine Name">
     </div>
 
-    <label class="form-label">Difficulty</label><br>
+    <label class="photo_style">Difficulty</label><br>
     <div class="form-group">
       <select name="routine[difficulty]">
         <option value="easy" >Easy</option>
@@ -45,16 +45,16 @@
     </div>
 
     <div class="">
-      <label class="form-label">Duration</label><br>
+      <label class="photo_style">Duration</label><br>
       <input name="routine[duration]" class="clear_text_box" placeholder="Duration(mins)">
     </div>
     <br>
     <div class="">
-      <label class="form-label">Duration</label><br>
+      <label class="photo_style">Description</label><br>
       <textarea name="routine[description]" class="clear_text_box" placeholder="Description"></textarea>
     </div>
     <br>
-    <button type="submit" id="routine_creator" class="create_routine_button">Create Routine</button>
+    <button type="submit" id="routine_creator" class="own-button"><font class="layout_font">Create Routine</font></button>
 
     </div>
 </form>

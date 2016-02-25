@@ -1,7 +1,8 @@
+<h1 class="header">Routine:<font color="orange"><%= @routine.name %></font></h1>
 <section class="routine_background"></section>
 <% @routine.exercises.each do |exercise| %>
   <li class="image_list">
-    <img class="images" src="<%= exercise.image_url%>">
+    <img class="img-thumbnail" src="<%= exercise.image_url%>" width="300" height="300">
         <h4 class="exercise_name"><%= exercise.name %></h4>
         <h4 class="exercise_difficulty"><%= exercise.difficulty %></h4>
   </li>

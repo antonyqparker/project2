@@ -1,5 +1,6 @@
 <h1 class="header">Routines</h1>
-  <section class="routine_background"></section>
+<br>
+<br>
 <a href="/routines/new" class="own-button">Create new routine</a>
 <div class="row">
     <ul class="list-group">
@@ -10,16 +11,15 @@
             <li class="list-group-item">
               <div class="img-rounded">
               <% if !routine.user.photo.url.nil? %>
-              <img src="<%= routine.user.photo.url %>">
+              <img src="<%= routine.user.photo.url %>" class="img-rounded" width="140" height="120">
               <% end %>
               </div>
-                
+                <% if routine.user %>
+                <p>User: <%= routine.user.username %></p>
                 <p>Name: <%= routine.name %></p>
                 <p>Difficulty: <%= routine.difficulty %></p>
                 <p>Duration: <%= routine.duration %></p>
                 <p>Description: <%= routine.description %></p>
-                <% if routine.user %>
-                <p>User: <%= routine.user.username %></p>
                 <a href="/routines/<%= routine.id %>" class="index-buttons">View</a>
                 <button type="submit" class="index-buttons"><a href="/routines/<%= routine.id %>/edit">Edit</a></button>
                   <form method="post" action="/routines/<%= routine.id %>/delete"> 

@@ -5,22 +5,39 @@
     <%= error %>
   </div>
 <% end %>
+<br>
+<br>
 <form id="information_upload" method="post" action="/users/<%= @user.id %>" enctype="multipart/form-data">
   <input type="hidden" name="_method" value="put"></input>
+
   <div class="form-group">
-    <label for="age"><font class="layout_font">DOB</font></label>
-    <input name="user[age]" type="text" class="form-control" id="user_age" placeholder="dd/mm/yy" value="<%= @user.age %>">
+    <label for="age" class="photo_style">DOB</label>
+    <input name="user[age]" type="text" class="form-control" id="user_age" placeholder="DD/MM/YY" value="<%= @user.age %>">
   </div>
+
   <div class="form-group">
-    <label for="level"><font class="layout_font">Level</font></label>
-    <input name="user[level]" type="text" class="form-control" id="user_level" placeholder="Level" value="<%= @user.level %>">
+    <label for="level" class="photo_style">Level</label>
+    <input name="user[level]" type="text" class="form-control" id="user_level" placeholder="beginner/intermediate/expert" value="<%= @user.level %>">
   </div>
-  <div align="center" class="form-group">
-    <select name="user[gender]">
+
+  <div align="center" class="inline_option">
+    <select name="user[gender]" class="edit_button">
       <option name="user[gender]" value="<%= @user.gender %>" >Male</option>
       <option name="user[gender]" value="<%= @user.gender %>">Female</option>
       <option name="user[gender]" value="<%= @user.gender %>">Both</option>
     </select>
   </div>
-  <button type="submit" class="own-button">Update</button>
+
+  <div class="form-group" class="inline_option">
+    <label for="user[photo]" class="photo_style">Photo</label>
+    <input name="user[photo]" type="file" class="choose_file">
+  </div>
+  <button type="submit" class="edit_button">Update</button>
 </form>
+
+
+
+
+
+
+
