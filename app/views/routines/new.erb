@@ -13,11 +13,11 @@
             <img class="img-thumbnail" src="<%= exercise.image_url%>">
             <h4 class="exercise_name"><%= exercise.name %></h4>
             <p class="exercise_difficulty"><%= exercise.difficulty %></p>
-            <p id="descrip_colour"class="exercise_description hidden"><%= exercise.description %></p>
+            <p id="descrip_colour" class="exercise_description hidden"><%= exercise.description %></p>
             <p class="exercise_youtube_url"><%= exercise.youtube_url %></p>
-              <div class="coloured-input">
-              <input type="checkbox" name="routine[exercise_ids][]" value="<%= exercise.id %>"> 
-            <label for="coloured-input"></label>
+            <div class="checkboxFour">
+              <input type="checkbox" name="routine[exercise_ids][]" value="<%= exercise.id %>" id="checkboxFourInput">
+              <label for="checkboxFourInput"></label>
             </div>
           </li>
         </ul>
@@ -26,13 +26,16 @@
     </ul>
   </div>
 
-  <div class="row">
+  <div class="container">
+
     <input name="routine[user_id]" value="<%= current_user.id %>" type="hidden"></input>
 
-    <div class="form-group">
+    <div class="">
+      <label class="form-label">Name</label><br>
       <input name="routine[name]" class="clear_text_box" placeholder="Routine Name">
     </div>
-    <label class="form-label">Difficulty</label>
+
+    <label class="form-label">Difficulty</label><br>
     <div class="form-group">
       <select name="routine[difficulty]">
         <option value="easy" >Easy</option>
@@ -41,14 +44,17 @@
       </select>
     </div>
 
-    <div class="form-group">
+    <div class="">
+      <label class="form-label">Duration</label><br>
       <input name="routine[duration]" class="clear_text_box" placeholder="Duration(mins)">
     </div>
     <br>
-    <div class="form-group">
+    <div class="">
+      <label class="form-label">Duration</label><br>
       <textarea name="routine[description]" class="clear_text_box" placeholder="Description"></textarea>
     </div>
     <br>
     <button type="submit" id="routine_creator" class="create_routine_button">Create Routine</button>
-  </div>
+
+    </div>
 </form>

@@ -5,23 +5,15 @@
   "main": "index.js",
   "dependencies": {
       "bower": "1.7.x"
-    },
-    "engine": {
-      "node": "5.0.x",
-      "npm": "1.3.x"
-    },
-    "scripts": {
-      "postinstall": "./node_modules/bower/bin/bower install"
-    },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/antonyqparker/project2.git"
+  },
+  "engine": {
+    "node": "5.0.x",
+    "npm": "3.3.x"
+  },
+  "scripts": {
+    "postinstall": "./node_modules/bower/bin/bower install"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/antonyqparker/project2/issues"
-  },
-  "homepage": "https://github.com/antonyqparker/project2#readme"
 }
 
