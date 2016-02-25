@@ -6,6 +6,7 @@
   <%= js :application%>
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900' rel='stylesheet' type='text/css'>
 </head>
 <body>
   <div class="social">
@@ -25,28 +26,28 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><a href=/exercises><font color="white" size="3">Exercises</font></a></li>
+          <li><a href=/exercises><font class="layout_font">Exercises</font></a></li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><font color="white" size="3">Routines</font><span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><font class="layout_font">Routines</font><span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="/routines"><font color="white" size="3">View Routines</font></a></li>
-              <li><a href="/routines/new"><font color="white" size="3">Create Routine</font></a></li>
+              <li><a href="/routines"><font class="layout_font">View Routines</font></a></li>
+              <li><a href="/routines/new"><font class="layout_font">Create Routine</font></a></li>
             </ul>
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
         <% if is_logged_in? %>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><font color="white" size="3"><%= current_user.username %></font><span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><font class="layout_font"><%= current_user.username %></font><span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="/users/<%= current_user.id %>/edit"><font color="white" size="3">Edit User Information</font></a></li>
-              <li><a href="/users/<%= current_user.id %>"><font color="white" size="3">View User</font></a></li>
-              <li><a href="/logout"><font color="white" size="3">Logout</font></a></li>
+              <li><a href="/users/<%= current_user.id %>/edit"><font class="layout_font">Edit User Information</font></a></li>
+              <li><a href="/users/<%= current_user.id %>"><font class="layout_font">View User</font></a></li>
+              <li><a href="/logout"><font class="layout_font">Logout</font></a></li>
             </ul>
           </li>
         <% else %>
-          <li><a href="/login"><font color="white" size="3">Login</font></a></li>
-          <li><a href="/register"><font color="white" size="3">Register</font></a></li>
+          <li><a href="/login"><font class="layout_font">Login</font></a></li>
+          <li><a href="/register"><font class="layout_font">Register</font></a></li>
         <% end %>
         </ul>
       </div>
