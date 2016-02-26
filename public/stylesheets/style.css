@@ -74,7 +74,9 @@ h2 { font-family: 'Shadows Into Light', cursive; text-align: center; color: #fff
 
 #user_profile { margin: 0 auto; width: 400px; border: 4px solid black; padding-top: 30px; }
 
-.index-buttons { font-family: 'Source Sans Pro', sans-serif; font-weight: bold; border: 4px solid black; padding: 10px 10px 10px 10px; margin-top: 4px; display: inline-block; background-color: #F5F5F5; }
+.index-buttons { font-family: 'Source Sans Pro', sans-serif; font-weight: bold; border: 4px solid black; padding: 10px 10px 10px 10px; margin-top: 4px; display: inline-block; background-color: #F5F5F5; color: black; }
+
+.index-buttons:hover { color: orange; }
 
 .form-inline input { display: inline-block; }
 

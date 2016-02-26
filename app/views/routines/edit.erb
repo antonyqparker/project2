@@ -1,13 +1,14 @@
-<h1>Edit Routine</h1>
+<h1 class="header">Edit Routine</h1>
+<br>
 
 <form id="create_routine" method="post" action="/routines/<%= @routine.id %>">
   <input type="hidden" name="_method" value="put"></input>
   <div class="form-group">
-    <label>Routine Name</label>
+    <label class="photo_style">Routine Name</label>
     <input name="routine[name]" placeholder="Routine Name" value="<% @routine.name %>">
-    <label>Difficulty</label>
+    <label class="photo_style">Difficulty</label>
     <input name="routine[difficulty]" placeholder="Difficulty(easy/medium/hard" value="<% @routine.difficulty %>">
-    <label>Duration</label>
+    <label class="photo_style">Duration</label>
     <input name="routine[duration]" placeholder="Duration(mins)" value="<% @routine.duration %>">
   </div>
   <ul class="exercise_image">
@@ -16,11 +17,13 @@
         <img class="images" src="<%= exercise.image_url%>">
         <h4 class="exercise_name"><%= exercise.name %></h4>
         <h4 class="exercise_difficulty"><%= exercise.difficulty %></h4>
-        <h4 class="exercise_description"><%= exercise.description %></h4>
         <h4 class="exercise_youtube_url"><%= exercise.youtube_url %></h4>
       </li>
-      <input type="checkbox" name="routine[exercise_ids][]" value="<%= exercise.id %>"> Select Exercise
+      <div class="selector">
+        <input type="checkbox" class="selector" name="routine[exercise_ids][]" value="<%= exercise.id %>">
+        <label for="selector"></label>
+      </div>
     <% end %>
   </ul>
-  <button type="submit" class="btn btn-default">Make change</button>
+  <button type="submit" class="edit_button">Make change</button>
 </form>
