@@ -18,7 +18,7 @@ section.home h3 { text-align: center; }
 
 .navbar-default { border: none; background: rgba(255, 255, 255, 0); }
 
-.social { position: fixed; top: 50px; right: 10px; margin: 0; padding: 0; }
+.social { position: fixed; top: 300px; right: 10px; margin: 0; padding: 0; }
 
 .social ul { margin: 0; padding: 5px; }
 

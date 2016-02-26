@@ -41,7 +41,7 @@ end
 #Update
 put '/routines/:id' do
   @routine = Routine.find(params[:id])
-  if @routine.update(params[:routine])
+  if is_users_routine?(@routine) && @routine.update(params[:routine])
     redirect "routines/#{@routine.id}"
   else
     erb :'routines/show'
@@ -52,7 +52,9 @@ end
 delete '/routines/:id/delete' do
   authorize!
   @routine = Routine.find_by_id(params[:id])
-  @routine.delete
+  if is_users_routine?(@routine)
+    @routine.delete
+  end
   redirect to "/routines"
 end
 

@@ -22,9 +22,9 @@
 
   <div align="center" class="inline_option">
     <select name="user[gender]" class="edit_button">
-      <option name="user[gender]" value="<%= @user.gender %>" >Male</option>
-      <option name="user[gender]" value="<%= @user.gender %>">Female</option>
-      <option name="user[gender]" value="<%= @user.gender %>">Both</option>
+      <option <% if @user.gender == 'male' %>selected="selected" <% end %>value="male">Male</option>
+      <option <% if @user.gender == 'female' %>selected="selected" <% end %>value="female">Female</option>
+      <option <% if @user.gender == 'both' %>selected="selected" <% end %>value="both">Both</option>
     </select>
   </div>
 

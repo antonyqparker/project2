@@ -21,10 +21,13 @@
                 <p>Duration: <%= routine.duration %></p>
                 <p>Description: <%= routine.description %></p>
                 <a href="/routines/<%= routine.id %>" class="index-buttons">View</a>
-                <button type="submit" class="index-buttons"><a href="/routines/<%= routine.id %>/edit">Edit</a></button>
-                  <form method="post" action="/routines/<%= routine.id %>/delete"> 
-                    <input type="hidden" name="_method" value="delete">
-                <button type="submit" class="index-buttons">Delete</button>
+
+                <% if is_users_routine?(routine) %>
+                  <button type="submit" class="index-buttons"><a href="/routines/<%= routine.id %>/edit">Edit</a></button>
+                    <form method="post" action="/routines/<%= routine.id %>/delete"> 
+                      <input type="hidden" name="_method" value="delete">
+                  <button type="submit" class="index-buttons">Delete</button>
+                <% end %>
               <% end %>
             </li>
               </form>

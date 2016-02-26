@@ -16,5 +16,9 @@ helpers do
       redirect '/login'
     end
   end
+
+  def is_users_routine?(routine)
+    current_user.routines.include?(routine)
+  end
   
 end
