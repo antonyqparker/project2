@@ -1,3 +1,6 @@
+<h1 class="header">User: <span style="color: orange"><%= @user.username %></span></h1>
+<br>
+<br>
 <div id="user_profile">
 <% if !@user.photo.url.nil? %>
   <img src="<%= @user.photo.url %>" class="img-rounded" width="140" height="120">
